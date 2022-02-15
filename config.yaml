@@ -1,0 +1,24 @@
+---
+  # This YAML configuration specifies a server with two volumes and two users
+  server:
+    instance_type: t2.micro
+    ami_type: amzn2
+    architecture: x86_64
+    root_device_type: ebs
+    virtualization_type: hvm
+    min_count: 1
+    max_count: 1
+    volumes:
+      - device: /dev/xvda
+        size_gb: 10
+        type: xfs
+        mount: /
+      - device: /dev/xvdf
+        size_gb: 20
+        type: ext4
+        mount: /data
+    users:
+      - login: user1
+        ssh_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRRqH+zYQsXGmL6ngCr9ZeAyUcdnut6VAKmIy1K+OIQqxfYCD2gVI5GXUuqSOONC520pErx6hSF7wI6oGvdiOaAUvaUx5t6uVEO20jDEXqWGW3wyQfuuC38ViDcKcWGdKZOp05Tt7xUM8ZNc+1O5G/K6o9qJE5zb9eUszGzCLgDo3Cp9qBI9YGw8SZbYtkIIb9L8AJxW7MU/Hqedi+8OGgnV/vXXEmH6hmIhVzctoLjPSvwvK4P+SJPO9fmAmgJmeToe/EdD3XSbr9AzB3uKDwzfBxwXMP1po5WzOHq0a5cdrqHHu+sCxb8vZvw6JpWVCIeoE8etu85xcERqH24HfIetooznVjsoOJH0CPKdDLJYcWTDBnkaFLkruG0G/KDuaitDYQj8JP0rO4LYCQHZI5I9S+REgKLBbBazH0RAjctt0IXw7ZelYVc6S3XarRACjnTUh5+RBgMjWVTxISnFRyPs2eudgv9i2WDUEfFjhx42WsWxjH/cDI10GfKgkkdJDn89q8C+q7an05C3zXY4neyb5IhDQyohnuUyTOyT7uarvUbPfrI2ISXJWGm/L4s5s/3MeCZTNViTbAnwQ3uHDwHZnXoRDlX4oaSsLZigU0xsQJxncfm01a518cZjjo9TuVnJBv2PWH2thtj7m1sKRRwT4YzVWnJUE4MMJMy1PPqw== daizaria@daizaria-VirtualBox
+      - login: user2
+        ssh_key: --user2 ssh public key goes here-- user2@localhost
