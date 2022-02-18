@@ -114,9 +114,7 @@ try:
                  'ToPort': 22,
                  'IpRanges': [{'CidrIp': MYIP}]}
         ])
-        # (same as via cli)
-        # $> aws ec2 describe-instance-attribute --instance-id instance_id --attribute groupSet
-        # $> aws ec2 authorize-security-group-ingress --group-id security_group_id --protocol tcp --port 22 --cidr MYIP
+       
     except Exception as e:
         traceback.print_exc()
         print(' .. ')
