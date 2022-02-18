@@ -9,7 +9,6 @@ KEYNAME = 'fetch-keypair'
 IMAGES = defaultdict(str)
 IMAGES ['amzn2-hvm-x86_64'] = 'ami-077e31c4939f6a2f3'
 IMAGES ['amzn2-hvm-arm_64'] = 'ami-07a3e3eda401f8caa'
-# IP range of machines requiring SSH access
 MYIP = '0.0.0.0/0'
 
 
@@ -85,9 +84,11 @@ try:
         ]
     )
 
-    # ec2 = boto3.client('ec2')
-    # response = ec2.describe_regions()
-    # print('Regions:', response['Regions'])
+    # specfify region
+    ec2 = boto3.client('ec2')
+    response = ec2.describe_regions()
+    print('Regions:', response['Regions'])
+    
     # wait for instance initialization
     print('Instance create, initialization pending ... ')
     instanceIds=[instances[0].id]
